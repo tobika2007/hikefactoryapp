@@ -1,0 +1,36 @@
+<!DOCTYPE>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Hike Catalogue</title>
+        <link rel="stylesheet" th:href="@{/css/hikelist.css}" href="../static/css/hikelist.css"/>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+    	<div class="hiketable">
+    	<img class=icon src="../images/map.png" alt="Map">
+        <h1>Hike Catalogue</h1>
+        <br>
+        <a href="/">Return to Hike Factory</a>
+        <br>
+        	<table id = "hikes">
+            	<tr>
+                	<th>Hike's ID</th>
+                	<th>Name</th>
+                	<th>Location</th>
+                	<th>Start Date</th>
+                	<th>Duration (hour)</th>
+                	<th>Difficulty</th>
+            	</tr>
+            	<tr th:each="hike : ${hikes}">
+                	<td th:text="${hike.id}">Hikes's ID</td>
+                	<td th:text="${hike.name}">Name</td>
+                	<td th:text="${hike.location}">Location</td>
+                	<td th:text="${hike.startDate}">Start Date</td>
+                	<td th:text="${hike.duration}">Duration</td>
+                	<td th:text="${hike.difficulty}">Difficulty</td>
+            	</tr>
+        	</table>
+		</div>
+    </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+        <title>Hike Factory</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}" href="../static/css/index.css">
+        <script src="../static/js/index.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Hike Factory</h1>
+        </header>
+        <ul>
+            <li><a class="active" href="home.html">Home</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="registration.html">Registration</a></li>
+        </ul>
+        <div class="content">
+            <h1 id="hello">Hello! Thank you for visiting my first web application.</h1>
+            <hr>
+            <br>
+            <div id="hiketopic">
+                <img class=icon src="../images/binocular.png" alt="Binoculars">
+                <p>Hike Catalogue<br>Find your destination!</p>
+				<button type="button" onclick="window.location.href='/hikelist'" th:action="@{/hikelist}">Show List</button>
+            </div>
+            <hr>
+            <div id="hiketopic">
+                <img class=icon src="../images/backpack.png" alt="BackPack">
+                <p>Hike Subscription<br>Apply for hiking now!</p>
+                <button type="button" onclick="window.location.href='/subscribe'" th:action="@{/subscribe}">Subscribe</button>
+            </div>
+            <hr>
+            <div id="hiketopic">
+                <img class=icon src="../images/hiking.png" alt="HikingBoot">
+                <p>Hike Creation<br>Organize your hike!</p>
+                <button type="button" onclick="document.getElementById('create').style.display='block'">Create</button>
+            </div>
+            <hr>
+        </div>
+
+        <div id="create" class="modal">
+            <span onclick="document.getElementById('create').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <form class="modal-content" method="post" th:action="@{/create}" action="/create" th:object="${creationForm}">
+                    <div class="container">
+                        <div class="modaltitle">
+                            <img class=icon src="../images/edit.png" alt="Edit">
+                            <h1>Hike Creation</h1>
+                            <p>Please fill in this form to create a hike</p>                           
+                        </div>
+                        <hr>
+                        <label for="text"><b>Hike's name:</b></label>
+                        <div class="fieldErrorMessage" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Form Error</div>
+                        <input type="text" th:field="*{name}" placeholder="Enter Name" name="name" required>
+
+                        <label for="text"><b>Location:</b></label>
+                        <div class="fieldErrorMessage" th:if="${#fields.hasErrors('location')}" th:errors="*{location}">Form Error</div>
+                        <input type="text" th:field="*{location}" placeholder="Enter Location" name="location" required>
+
+                        <label for="text"><b>Start Date (day/month/year hour:minute):</b></label>
+                        <div class="fieldErrorMessage" th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}">Form Error</div>
+                        <input type="text" th:field="*{startDate}" placeholder="Enter Date" name="date" required>
+                        
+                        <label for="text"><b>Duration (hour):</b></label>
+                        <div class="fieldErrorMessage" th:if="${#fields.hasErrors('duration')}" th:errors="*{duration}">Form Error</div>
+                        <input type="text" th:field="*{duration}" placeholder="Enter Duration" name="dur" required>
+                        
+                        <label for="text"><b>Difficulty:</b></label>
+                        <div class="fieldErrorMessage" th:if="${#fields.hasErrors('difficulty')}" th:errors="*{difficulty}">Form Error</div>
+                        <input list="diff" type="text" th:field="*{difficulty}" placeholder="Enter Difficulty" name="diff" required>
+                        	<datalist id="diff">
+                        		<option value="Very Easy">
+                        		<option value="Easy">
+                        		<option value="Medium">
+                        		<option value="Difficult">
+                        		<option value="Just for professionals">
+                        	</datalist> 
+                    <div class="clearfix">
+                    	<div class="formErrorMessage" th:if="${#fields.hasErrors('global')}" th:errors="*{global}">Form Error</div>
+                        <button type="button" onclick="document.getElementById('create').style.display='none'" class="cancelbtn">Cancel</button>
+                        <button type="submit" class="signupbtn">Create Hike</button>
+                    </div>
+                    </div>
+                </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css?family=Gaegu:400,700');
+@import url('https://fonts.googleapis.com/css?family=Poor+Story');
+
+header h1 {
+  color: red;
+  font-size: 8em;
+  font-family: 'Gaegu', cursive;
+  font-style: italic;
+  font-weight: bold;
+  
+  text-align: center;
+  
+  line-height: 0.5em;
+  letter-spacing:0.3em;
+  
+  margin-top: 300px;
+  margin-bottom: 0px;
+  padding-top: 25px;  
+}
+
+header h1::first-letter {  
+}
+
+header {
+  background-image: url(../images/landscape.jpg);
+  height: 30em;
+  background-size: cover;  
+  border-style: solid;
+  border-width: 5px; 
+  margin: 0px;
+  position: relative; 
+}
+
+body {
+  background-image: url(../images/leaf1.jpg);
+  
+      
+}
+div.content {
+  margin: 15px;
+  padding: 10px;  
+  color: black;   
+}
+
+ul {
+    margin-top: 5px;
+    font-size: 60px;
+    font-family: 'Gaegu', cursive;
+    text-align: center;    
+}
+
+li {
+    display: inline;
+}
+
+li a {
+    margin-right: 1em;
+    text-decoration: none;
+    text-align: center;
+}
+li a::last child {
+   margin-right: 0px; 
+}
+li a.active {
+    color: brown;
+    font-weight: bolder;
+}
+li a:hover {
+    background-color: aquamarine;
+    border-radius: 12px;
+}
+
+div #hiketopic {
+    margin: 0px;
+    padding: 20px;
+    overflow: auto;
+}
+
+div #hiketopic .icon {
+    float: left;
+    margin: 10px;
+    padding-right: 80px;
+}
+
+div #hiketopic p {
+    font-size: 50px;
+    font-family: 'Gaegu', cursive;
+    font-style: italic;
+    font-weight: bold;
+    float: left;    
+}
+
+div #hiketopic button {
+    color: beige; 
+    font-size: 40px;
+    font-family: 'Poor Story', cursive; 
+    text-align: center;
+    width: 15%;
+    border-radius: 12px;
+    background-color: forestgreen;
+    margin-top: 70px;
+    margin-right: 50px;
+    padding: 14px 40px;
+    float: right;
+}
+
+div #hiketopic button:hover {
+    background-color: peru;
+}
+
+/* The Modal (background) */
+.modal {
+    margin: 0px;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-image: url(../images/wood.jpg);
+    padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto ; /* 5% from the top, 15% from the bottom and centered */
+    border: 10px solid #888;
+    border-radius: 12px;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* Add padding to container elements */
+.modal .container {
+    padding: 16px;
+}
+
+.modal .container .modaltitle .icon {
+    height: 120px;
+    width: 120px;
+}
+
+/* Style the horizontal ruler */
+.modal .container hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+ 
+input[type=text] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+    float: left;
+    width: 50%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+   
+}
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+}
+
+.close:hover {
+    color: crimson;
+}
+.close:focus {
+    color: black;
+    cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+}
+* {
+    box-sizing: border-box
+}
+
+form div .formErrorMessage, .fieldErrorMessage {
+	color: red;
+}

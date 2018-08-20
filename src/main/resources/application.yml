@@ -1,0 +1,11 @@
+hike:
+  numberOfHikeSubscriptions: 5004
+  
+communication:
+  recentHikes:
+    -
+      subject: Bakony
+      content: 10 km
+    -
+      subject: Mecsek
+      content: 5 km  
